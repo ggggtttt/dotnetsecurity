@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace mvcapp.Controllers
 {
@@ -10,6 +6,15 @@ namespace mvcapp.Controllers
     {
         public ActionResult Index()
         {
+
+#if DEBUG
+            // development code here only
+#elif STAGE
+            // stage related code here only
+#else
+            // probably production related code here only
+#endif
+
             return View();
         }
 
