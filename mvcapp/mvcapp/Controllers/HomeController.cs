@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using NLog;
 
 namespace mvcapp.Controllers
 {
@@ -6,6 +7,13 @@ namespace mvcapp.Controllers
     {
         public ActionResult Index()
         {
+            var showCaseLogger = LogManager.GetLogger("ShowCaseLogger");
+
+            showCaseLogger.Debug("This is debug log.");
+            showCaseLogger.Info("This is info log.");
+            showCaseLogger.Warn("This is warning log.");
+            showCaseLogger.Error("This is error log.");
+            showCaseLogger.Fatal("This is fatal log.");
 
 #if DEBUG
             // development code here only
