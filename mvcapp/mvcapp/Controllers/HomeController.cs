@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using mvcapp.Models;
 using NLog;
 
 namespace mvcapp.Controllers
@@ -38,6 +39,17 @@ namespace mvcapp.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Person()
+        {
+            var person = new Person
+            {
+                FirstName = "John",
+                LastName = "Johnson"
+            };
+
+            return View(person);
         }
     }
 }
