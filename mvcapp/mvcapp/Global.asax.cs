@@ -15,6 +15,8 @@ namespace mvcapp
             GlobalFilters.Filters.Add(new BuggyActionFilter());
             GlobalFilters.Filters.Add(new CSPActionFilter());
 
+            GlobalFilters.Filters.Add(new WebExceptionFilter());
+
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);

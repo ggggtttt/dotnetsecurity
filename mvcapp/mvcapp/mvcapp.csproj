@@ -147,6 +147,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\BuggyActionFilter.cs" />
     <Compile Include="Filters\CSPActionFilter.cs" />
+    <Compile Include="Filters\WebExceptionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

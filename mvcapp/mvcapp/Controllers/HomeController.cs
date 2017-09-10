@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using mvcapp.Models;
 using NLog;
 
@@ -50,6 +51,11 @@ namespace mvcapp.Controllers
             };
 
             return View(person);
+        }
+
+        public ActionResult Exception()
+        {
+            throw new Exception("Intentionally throw exception.");
         }
     }
 }

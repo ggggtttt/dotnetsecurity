@@ -9,7 +9,7 @@ namespace mvcapp
         {
 
 #if DEBUG
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
 #endif
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
