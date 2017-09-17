@@ -74,10 +74,16 @@ namespace mvcapp.Filters
 
     public class GeneralError
     {
+        public string Message { get; set; }
         public Exception Exception { get; set; }
         public bool IsDebug => HttpContext.Current.IsDebuggingEnabled;
 
-        public GeneralError(Exception exception)
+        public GeneralError()
+        {
+            Message = "Error occured.";
+        }
+
+        public GeneralError(Exception exception) : this()
         {
             Exception = exception;
         }
