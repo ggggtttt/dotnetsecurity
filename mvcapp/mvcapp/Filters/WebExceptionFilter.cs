@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NLog;
@@ -49,12 +50,23 @@ namespace mvcapp.Filters
 
         private static void HandleAjaxException(ExceptionContext filterContext)
         {
-            throw new NotImplementedException("Not sure if we need this right now.");
+            var exception = filterContext.Exception;
+
+#if DEBUG
+            var generalErrorDto = new JsonError(exception);
+#else
+            var generalErrorDto = new JsonError();
+#endif
+            filterContext.Result = new JsonResult {Data = generalErrorDto,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet};
+
+            AdjustResponse(filterContext);
         }
 
         private static void AdjustResponse(ExceptionContext filterContext)
         {
             filterContext.ExceptionHandled = true;
+            filterContext.HttpContext.Response.StatusCode = (int) HttpStatusCode.BadRequest;
             filterContext.HttpContext.Response.Clear();
             filterContext.HttpContext.Response.TrySkipIisCustomErrors = true;
         }
@@ -68,6 +80,32 @@ namespace mvcapp.Filters
         public GeneralError(Exception exception)
         {
             Exception = exception;
+        }
+    }
+
+    public class JsonError
+    {
+        public string Message { get; set; }
+        public string StackTrace { get; set; }
+
+        public JsonError()
+        {
+            Message = "Error occured.";
+        }
+
+        public JsonError(string message) 
+        {
+            Message = message;
+        }
+
+        public JsonError(Exception exception) : this(exception.Message)
+        {
+            StackTrace = exception.StackTrace;
+        }
+
+        public override string ToString()
+        {
+            return Message + Environment.NewLine + StackTrace;
         }
     }
 }

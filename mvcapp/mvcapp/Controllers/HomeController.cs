@@ -53,9 +53,16 @@ namespace mvcapp.Controllers
             return View(person);
         }
 
+
         public ActionResult Exception()
         {
             throw new Exception("Intentionally throw exception.");
+        }
+
+
+        public ActionResult AjaxExceptionExample()
+        {
+            return View();
         }
     }
 }
