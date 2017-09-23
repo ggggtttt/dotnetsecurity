@@ -22,6 +22,7 @@ namespace mvcapp
             GlobalFilters.Filters.Add(new WebExceptionFilter());
 
             GlobalConfiguration.Configuration.Filters.Add(new ApiExceptionFilter());
+            GlobalConfiguration.Configuration.Filters.Add(new ApiAntiCsrfActionFilter());
             GlobalConfiguration.Configuration.Services.
                 Replace(typeof(IExceptionHandler), new ApiExceptionHandler());
 
