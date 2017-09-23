@@ -209,7 +209,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Person.cshtml" />
     <Content Include="Views\Home\AjaxExceptionExample.cshtml" />
-    <Content Include="Views\Home\ApiExceptionExample.cshtml" />
+    <Content Include="Views\Home\CsrfExample.cshtml" />
+    <Content Include="Views\Home\CsrfCheck.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

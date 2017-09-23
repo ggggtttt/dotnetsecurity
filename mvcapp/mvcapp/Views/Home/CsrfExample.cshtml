@@ -1,0 +1,10 @@
+﻿@model mvcapp.Models.Person
+
+@using (Html.BeginForm("CsrfCheck", "Home"))
+{
+    @Html.TextBoxFor(m => m.FirstName) <br/>
+    @Html.TextBoxFor(m => m.LastName) <br />
+    @Html.AntiForgeryToken() <br />
+    <input type="submit" value="Click Me" />
+}
+

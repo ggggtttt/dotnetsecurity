@@ -64,5 +64,17 @@ namespace mvcapp.Controllers
         {
             return View();
         }
+
+        public ActionResult CsrfExample()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CsrfCheck(Person model)
+        {
+            return View();
+        }
     }
 }
