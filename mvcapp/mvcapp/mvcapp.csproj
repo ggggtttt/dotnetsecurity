@@ -156,6 +156,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BuggyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="FiltersApi\ApiAntiCsrfActionFilter.cs" />
     <Compile Include="FiltersApi\ApiExceptionFilter.cs" />
     <Compile Include="Filters\BuggyActionFilter.cs" />
     <Compile Include="Filters\CSPActionFilter.cs" />
