@@ -76,5 +76,11 @@ namespace mvcapp.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult XssExample(XssTestModel model)
+        {
+            return View(model);
+        }
     }
 }

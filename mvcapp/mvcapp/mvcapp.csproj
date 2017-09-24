@@ -167,6 +167,7 @@
     <Compile Include="Handlers\ApiExceptionHandler.cs" />
     <Compile Include="HttpModules\LogfulHttpModule.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\XssTestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -212,6 +213,7 @@
     <Content Include="Views\Home\AjaxExceptionExample.cshtml" />
     <Content Include="Views\Home\CsrfExample.cshtml" />
     <Content Include="Views\Home\CsrfCheck.cshtml" />
+    <Content Include="Views\Home\XssExample.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
