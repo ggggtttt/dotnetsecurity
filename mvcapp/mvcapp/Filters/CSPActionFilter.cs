@@ -11,7 +11,7 @@ namespace mvcapp.Filters
             string url = filterContext?.HttpContext?.Request?.Url?.AbsoluteUri;
             Debug.WriteLine($"CSPActionFilter, begining of request: {url}");
 
-            // filterContext?.RequestContext?.HttpContext?.Response?.Headers.Add("Content-Security-Policy", "script-src 'self'; style-src 'self'; img-src 'self';");
+            //filterContext?.RequestContext?.HttpContext?.Response?.Headers.Add("Content-Security-Policy", "script-src 'self'; style-src 'self'; img-src 'self';");
         }
 
         public override void OnActionExecuted(ActionExecutedContext filterContext)

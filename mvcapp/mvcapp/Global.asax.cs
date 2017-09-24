@@ -15,6 +15,8 @@ namespace mvcapp
         protected void Application_PreSendRequestHeaders()
         {
             Response.Headers.Remove("Server");
+            //Response.Headers.Add("Content-Security-Policy", 
+            //    "script-src 'self'; style-src 'self'; img-src 'self';");
         }
 
         protected void Application_Start()
