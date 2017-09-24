@@ -12,8 +12,15 @@ namespace mvcapp
 {
     public class MvcApplication : HttpApplication
     {
+        protected void Application_PreSendRequestHeaders()
+        {
+            Response.Headers.Remove("Server");
+        }
+
         protected void Application_Start()
         {
+            MvcHandler.DisableMvcResponseHeader = true;
+
             AreaRegistration.RegisterAllAreas();
 
             GlobalFilters.Filters.Add(new BuggyActionFilter());

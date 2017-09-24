@@ -1,7 +1,10 @@
 ﻿@model mvcapp.Models.XssTestModel
 
-
 <h2>XSS</h2>
 
-<p>@Model.Value</p>
+<p>@Model.Value</p
+>
+<p>@Model.XmlValue</p>
+
+<p>@Html.Raw(Model.XmlValue2)</p>
 

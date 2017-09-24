@@ -78,6 +78,7 @@ namespace mvcapp.Controllers
         }
 
         [HttpGet]
+        //[ValidateInput(false)]
         public ActionResult XssExample(XssTestModel model)
         {
             return View(model);
