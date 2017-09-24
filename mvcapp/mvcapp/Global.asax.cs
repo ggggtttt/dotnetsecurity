@@ -27,7 +27,7 @@ namespace mvcapp
 
             GlobalFilters.Filters.Add(new BuggyActionFilter());
             GlobalFilters.Filters.Add(new CSPActionFilter());
-
+            GlobalFilters.Filters.Add(new SecurityHeadersActionFilter());
             GlobalFilters.Filters.Add(new WebExceptionFilter());
 
             GlobalConfiguration.Configuration.Filters.Add(new ApiExceptionFilter());

@@ -161,6 +161,7 @@
     <Compile Include="FiltersApi\ApiExceptionFilter.cs" />
     <Compile Include="Filters\BuggyActionFilter.cs" />
     <Compile Include="Filters\CSPActionFilter.cs" />
+    <Compile Include="Filters\SecurityHeadersActionFilter.cs" />
     <Compile Include="Filters\WebExceptionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
